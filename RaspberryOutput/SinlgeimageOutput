@@ -1,0 +1,273 @@
+
+*******************************************
+HIGHEST BLEU-Score sample - 579287915_4257c54451.jpg
+*******************************************
+
+/home/nag/Nagaraj/Master/Flickr8k_Dataset/1579287915_4257c54451.jpg
+1000
+evaluate_model_basic_oneimage
+
+ ******NO Model Quantization: 
+predict_captions
+
+****** Time taken:  0.29315390189488727
+ACTUAL- TEXT:
+['A biker races .', 'A guy on a bmx bike .', 'A man rides a bike through a course .', 'Stop action frame of a racer in a bicycle race .', 'The bike rider is wearing a silver helmet and red shirt .']
+PREDICTED- TEXT:
+A man in a red shirt and helmet rides a bike on a dirt path .
+BLEU-1: 0.812500
+BLEU-2: 0.570088
+BLEU-3: 0.323390
+BLEU-4: 0.000000
+evaluate_model_basic_oneimage
+
+ ****** Encoder Only Quantization: 
+predict_captions_interpreter_encoder
+
+****** Time taken:  0.7283382654190064
+ACTUAL- TEXT:
+['A biker races .', 'A guy on a bmx bike .', 'A man rides a bike through a course .', 'Stop action frame of a racer in a bicycle race .', 'The bike rider is wearing a silver helmet and red shirt .']
+PREDICTED- TEXT:
+A man in a red shirt and helmet rides a bike on a dirt path .
+  warnings.warn(_msg)
+BLEU-1: 0.812500
+BLEU-2: 0.570088
+BLEU-3: 0.323390
+BLEU-4: 0.000000
+evaluate_model_basic_oneimage
+
+ ****** No Encoder Quantization and Final Model Quantization: 
+predict_captions_interpreter_encoder_full
+
+****** Time taken:  0.026263912518819172
+ACTUAL- TEXT:
+['A biker races .', 'A guy on a bmx bike .', 'A man rides a bike through a course .', 'Stop action frame of a racer in a bicycle race .', 'The bike rider is wearing a silver helmet and red shirt .']
+PREDICTED- TEXT:
+A man in a red shirt is riding a bike in the woods .
+  warnings.warn(_msg)
+BLEU-1: 0.714286
+BLEU-2: 0.468807
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+evaluate_model_basic_oneimage
+
+ ****** Both Encoder and Final Model Quantization: 
+predict_captions_interpreter_encoder_full
+
+****** Time taken:  0.5433926741282146
+ACTUAL- TEXT:
+['A biker races .', 'A guy on a bmx bike .', 'A man rides a bike through a course .', 'Stop action frame of a racer in a bicycle race .', 'The bike rider is wearing a silver helmet and red shirt .']
+PREDICTED- TEXT:
+A man in a red shirt is riding a bike in the woods .
+  warnings.warn(_msg)
+BLEU-1: 0.714286
+BLEU-2: 0.468807
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+
+
+
+***********************************************************************************
+Test  image one - 3316725440_9ccd9b5417.jpg
+
+evaluate_model_basic_oneimage
+
+ ******NO Model Quantization: 
+predict_captions
+
+****** Time taken:  0.24375282128651937
+ACTUAL- TEXT:
+['A woman in a blue shirt guides her dog over an obstacle .', 'a woman is running beside a dog that is jumping over a red and white obedience training fence .', 'A woman next to a dog which is running an obstacle course .', 'A woman walking with a Sheltie through a competition obstacle course .', 'The dog is jumping over the hurdles beside a woman .']
+PREDICTED- TEXT:
+A dog jumps over a hurdle .
+BLEU-1: 0.403370
+BLEU-2: 0.194846
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+evaluate_model_basic_oneimage
+
+ ****** Encoder Only Quantization: 
+predict_captions_interpreter_encoder
+
+****** Time taken:  0.370792818069458
+ACTUAL- TEXT:
+['A woman in a blue shirt guides her dog over an obstacle .', 'a woman is running beside a dog that is jumping over a red and white obedience training fence .', 'A woman next to a dog which is running an obstacle course .', 'A woman walking with a Sheltie through a competition obstacle course .', 'The dog is jumping over the hurdles beside a woman .']
+PREDICTED- TEXT:
+A dog jumps over a hurdle .
+BLEU-1: 0.403370
+BLEU-2: 0.194846
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+evaluate_model_basic_oneimage
+
+ ****** No Encoder Quantization and Final Model Quantization: 
+predict_captions_interpreter_encoder_full
+
+****** Time taken:  0.020158668359120686
+ACTUAL- TEXT:
+['A woman in a blue shirt guides her dog over an obstacle .', 'a woman is running beside a dog that is jumping over a red and white obedience training fence .', 'A woman next to a dog which is running an obstacle course .', 'A woman walking with a Sheltie through a competition obstacle course .', 'The dog is jumping over the hurdles beside a woman .']
+PREDICTED- TEXT:
+A dog is running through the grass .
+
+  warnings.warn(_msg)
+BLEU-1: 0.601378
+BLEU-2: 0.343645
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+evaluate_model_basic_oneimage
+
+ ****** Both Encoder and Final Model Quantization: 
+predict_captions_interpreter_encoder_full
+
+****** Time taken:  0.3320661942164103
+ACTUAL- TEXT:
+['A woman in a blue shirt guides her dog over an obstacle .', 'a woman is running beside a dog that is jumping over a red and white obedience training fence .', 'A woman next to a dog which is running an obstacle course .', 'A woman walking with a Sheltie through a competition obstacle course .', 'The dog is jumping over the hurdles beside a woman .']
+PREDICTED- TEXT:
+A dog is running through the grass .
+
+  warnings.warn(_msg)
+BLEU-1: 0.601378
+BLEU-2: 0.343645
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+
+
+
+***********************************************************************************
+
+Test  image one - 3385593926_d3e9c21170.jpg
+
+
+
+ ******NO Model Quantization: 
+predict_captions
+
+****** Time taken:  0.29906315008799234
+ACTUAL- TEXT:
+['The dogs are in the snow in front of a fence .', 'The dogs play on the snow .', 'Two brown dogs playfully fight in the snow .', 'Two brown dogs wrestle in the snow .', 'Two dogs playing in the snow .']
+PREDICTED- TEXT:
+A brown dog is running through the snow .
+<IPython.lib.display.Audio object>
+/home/nag/Nagaraj/Master/venv/lib/python3.9/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+BLEU-1: 0.444444
+BLEU-2: 0.333333
+BLEU-3: 0.288535
+BLEU-4: 0.000000
+evaluate_model_basic_oneimage
+
+ ****** Encoder Only Quantization: 
+predict_captions_interpreter_encoder
+
+****** Time taken:  0.46694223086039227
+ACTUAL- TEXT:
+['The dogs are in the snow in front of a fence .', 'The dogs play on the snow .', 'Two brown dogs playfully fight in the snow .', 'Two brown dogs wrestle in the snow .', 'Two dogs playing in the snow .']
+PREDICTED- TEXT:
+A brown dog is running through the snow .
+
+BLEU-1: 0.444444
+BLEU-2: 0.333333
+BLEU-3: 0.288535
+BLEU-4: 0.000000
+evaluate_model_basic_oneimage
+
+ ****** No Encoder Quantization and Final Model Quantization: 
+predict_captions_interpreter_encoder_full
+
+****** Time taken:  0.018148132165273032
+ACTUAL- TEXT:
+['The dogs are in the snow in front of a fence .', 'The dogs play on the snow .', 'Two brown dogs playfully fight in the snow .', 'Two brown dogs wrestle in the snow .', 'Two dogs playing in the snow .']
+PREDICTED- TEXT:
+A dog is running through the grass .
+
+BLEU-1: 0.250000
+BLEU-2: 0.000000
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+evaluate_model_basic_oneimage
+
+ ****** Both Encoder and Final Model Quantization: 
+predict_captions_interpreter_encoder_full
+
+****** Time taken:  0.33179564476013185
+ACTUAL- TEXT:
+['The dogs are in the snow in front of a fence .', 'The dogs play on the snow .', 'Two brown dogs playfully fight in the snow .', 'Two brown dogs wrestle in the snow .', 'Two dogs playing in the snow .']
+PREDICTED- TEXT:
+A dog is running through the grass .
+
+BLEU-1: 0.250000
+BLEU-2: 0.000000
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+
+***********************************************************************************
+
+Test  image one - 3320032226_63390d74a6.jpg
+
+evaluate_model_basic_oneimage
+
+ ******NO Model Quantization: 
+predict_captions
+
+****** Time taken:  0.2757042129834493
+ACTUAL- TEXT:
+['A child dressed for the cold sits in the snow .', 'a child in red sits in the snow .', 'A little girl in a red snowsuit sits on a snowball in a backyard .', 'little kid in red snowsuit with hello kitty mittens', 'The small girl in the Hello Kitty gloves and red snowsuit smiles while sitting on a large snowball .']
+PREDICTED- TEXT:
+A young boy in a red jacket is standing in the snow .
+<IPython.lib.display.Audio object>
+BLEU-1: 0.615385
+BLEU-2: 0.506370
+BLEU-3: 0.450193
+BLEU-4: 0.289178
+evaluate_model_basic_oneimage
+
+ ****** Encoder Only Quantization: 
+predict_captions_interpreter_encoder
+
+****** Time taken:  0.5808642625808715
+ACTUAL- TEXT:
+['A child dressed for the cold sits in the snow .', 'a child in red sits in the snow .', 'A little girl in a red snowsuit sits on a snowball in a backyard .', 'little kid in red snowsuit with hello kitty mittens', 'The small girl in the Hello Kitty gloves and red snowsuit smiles while sitting on a large snowball .']
+PREDICTED- TEXT:
+A young boy in a red jacket is walking on the ice .
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+BLEU-1: 0.538462
+BLEU-2: 0.299572
+BLEU-3: 0.236311
+BLEU-4: 0.000000
+evaluate_model_basic_oneimage
+
+ ****** No Encoder Quantization and Final Model Quantization: 
+predict_captions_interpreter_encoder_full
+
+****** Time taken:  0.02126421531041463
+ACTUAL- TEXT:
+['A child dressed for the cold sits in the snow .', 'a child in red sits in the snow .', 'A little girl in a red snowsuit sits on a snowball in a backyard .', 'little kid in red snowsuit with hello kitty mittens', 'The small girl in the Hello Kitty gloves and red snowsuit smiles while sitting on a large snowball .']
+PREDICTED- TEXT:
+A man in a red shirt is standing on a rock .
+
+BLEU-1: 0.583333
+BLEU-2: 0.398862
+BLEU-3: 0.288731
+BLEU-4: 0.000000
+evaluate_model_basic_oneimage
+
+
+ ****** Both Encoder and Final Model Quantization: 
+predict_captions_interpreter_encoder_full
+
+****** Time taken:  0.4513299902280172
+ACTUAL- TEXT:
+['A child dressed for the cold sits in the snow .', 'a child in red sits in the snow .', 'A little girl in a red snowsuit sits on a snowball in a backyard .', 'little kid in red snowsuit with hello kitty mittens', 'The small girl in the Hello Kitty gloves and red snowsuit smiles while sitting on a large snowball .']
+PREDICTED- TEXT:
+A man in a red shirt is standing on a rock .
+  warnings.warn(_msg)
+BLEU-1: 0.583333
+BLEU-2: 0.398862
+BLEU-3: 0.288731
+BLEU-4: 0.000000
+

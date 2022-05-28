@@ -1,0 +1,91 @@
+def beam_search_predictions_encoder_interpreter_full(image,encoder_interpreter,decoder_interpreter,beam_index,yes_encoder):
+  start = [word2idx["<start>"]]
+  start_word = [[start, 0.0]]
+    
+  while len(start_word[0][0]) < max_len:
+      temp = []
+      for s in start_word:
+          par_caps = sequence.pad_sequences([s[0]], maxlen=max_len, padding='post')
+          
+          if yes_encoder == True:
+            output = extract_features_quantized(interpreter,image)   
+            preds = extract_final_model_quantized(decoder_interpreter,output,np.array(par_caps))
+          else:
+           output = encoding_test[image[len(images):]] 
+           preds = extract_final_model_quantized(decoder_interpreter,np.array([output]),np.array(par_caps))
+
+          #preds = final_model.predict([output, np.array(par_caps)])
+          #e = encoding_test[image[len(images):]]
+          #preds = final_model.predict([np.array([e]), np.array(par_caps)])
+          word_preds = np.argsort(preds[0])[-beam_index:]
+          
+          # Getting the top <beam_index>(n) predictions and creating a 
+          # new list so as to put them via the model again
+          for w in word_preds:
+              next_cap, prob = s[0][:], s[1]
+              next_cap.append(w)
+              prob += preds[0][w]
+              temp.append([next_cap, prob])
+                  
+      start_word = temp
+      # Sorting according to the probabilities
+      start_word = sorted(start_word, reverse=False, key=lambda l: l[1])
+      # Getting the top words
+      start_word = start_word[-beam_index:]
+    
+  start_word = start_word[-1][0]
+  intermediate_caption = [idx2word[i] for i in start_word]
+
+  final_caption = []
+    
+  for i in intermediate_caption:
+      if i != '<end>':
+          final_caption.append(i)
+      else:
+          break
+  
+  final_caption = ' '.join(final_caption[1:])
+  return final_caption
+
+
+def evaluate_model_basic_trained_bleu_images(encoder_interpreter, decoder_interpreter,encoder_final_quant,beam_index = 3):
+  actual, predicted = list(), list()
+  cnt = 0
+  start = time.time()
+  for key, desc_list in test_d.items():
+    cnt= cnt+1
+    print(cnt)
+    if encoder_final_quant == 1:
+      print("\n ****** Beam Encoder Only Quantization: ") 
+      #yhat = predict_captions_interpreter_encoder(key,encoder_interpreter)
+      yhat = beam_search_predictions_encoder_interpreter(key,encoder_interpreter,beam_index)
+    elif encoder_final_quant == 2:
+      print("\n ****** Beam NO Encoder Quantization and Final Model Quantization: ")
+      yhat = beam_search_predictions_encoder_interpreter_full(key,encoder_interpreter,decoder_interpreter,beam_index,False)
+    elif encoder_final_quant == 3:
+      print("\n ****** Beam Encoder and Final Model Quantization: ")
+      yhat = beam_search_predictions_encoder_interpreter_full(key,encoder_interpreter,decoder_interpreter,beam_index,True)
+    else:
+      print("\n ****** Beam Model Quantization: ")
+      yhat = beam_search_predictions(key,beam_index)
+
+    references = [desp.split() for desp in desc_list]
+    actual.append(references)
+    predicted.append(yhat.split())
+    
+    if cnt == 30 : 
+        break
+     #   print('ACTUAL- TEXT:')
+      #  print(actual)
+    
+       # print('PREDICTED- TEXT:')
+       # print(predicted)
+        
+  #print('FULL ACTUAL- TEXT: ')
+  #print('FULL PREDICTED- TEXT: ')
+  print("\n ****** Time taken: ", (time.time()-start)/60)  
+  #calculate BLEU score
+  print('BLEU-1: %f' % corpus_bleu(actual, predicted, weights=(1.0, 0, 0, 0)))
+  print('BLEU-2: %f' % corpus_bleu(actual, predicted, weights=(0.5, 0.5, 0, 0)))
+  print('BLEU-3: %f' % corpus_bleu(actual, predicted, weights=(0.3, 0.3, 0.3, 0)))
+  print('BLEU-4: %f' % corpus_bleu(actual, predicted, weights=(0.25, 0.25, 0.25, 0.25)))

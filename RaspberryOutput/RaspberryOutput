@@ -1,0 +1,235 @@
+>>> %Run RaspberryPiCode_Final.py
+['A child in a pink dress is climbing up a set of stairs in an entry way .', 'A girl going into a wooden building .', 'A little girl climbing into a wooden playhouse .', 'A little girl climbing the stairs to her playhouse .', 'A little girl in a pink dress going into a wooden cabin .']
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+*********************
+
+[{'name': 'StatefulPartitionedCall:0', 'index': 312, 'shape': array([   1, 2048], dtype=int32), 'shape_signature': array([  -1, 2048], dtype=int32), 'dtype': <class 'numpy.float32'>, 'quantization': (0.0, 0), 'quantization_parameters': {'scales': array([], dtype=float32), 'zero_points': array([], dtype=int32), 'quantized_dimension': 0}, 'sparsity_parameters': {}}]
+*********************
+
+2.8.0
+*********************
+
+[{'name': 'serving_default_input_3:0', 'index': 0, 'shape': array([  1, 299, 299,   3], dtype=int32), 'shape_signature': array([ -1, 299, 299,   3], dtype=int32), 'dtype': <class 'numpy.float32'>, 'quantization': (0.0, 0), 'quantization_parameters': {'scales': array([], dtype=float32), 'zero_points': array([], dtype=int32), 'quantized_dimension': 0}, 'sparsity_parameters': {}}]
+INFO: Created TensorFlow Lite delegate for select TF ops.
+INFO: TfLiteFlexDelegate delegate: 4 nodes delegated out of 38 nodes with 2 partitions.
+
+[{'name': 'StatefulPartitionedCall:0', 'index': 74, 'shape': array([   1, 8256], dtype=int32), 'shape_signature': array([  -1, 8256], dtype=int32), 'dtype': <class 'numpy.float32'>, 'quantization': (0.0, 0), 'quantization_parameters': {'scales': array([], dtype=float32), 'zero_points': array([], dtype=int32), 'quantized_dimension': 0}, 'sparsity_parameters': {}}]
+[{'name': 'serving_default_input_3:0', 'index': 0, 'shape': array([ 1, 40], dtype=int32), 'shape_signature': array([-1, 40], dtype=int32), 'dtype': <class 'numpy.float32'>, 'quantization': (0.0, 0), 'quantization_parameters': {'scales': array([], dtype=float32), 'zero_points': array([], dtype=int32), 'quantized_dimension': 0}, 'sparsity_parameters': {}}, {'name': 'serving_default_input_2:0', 'index': 1, 'shape': array([   1, 2048], dtype=int32), 'shape_signature': array([  -1, 2048], dtype=int32), 'dtype': <class 'numpy.float32'>, 'quantization': (0.0, 0), 'quantization_parameters': {'scales': array([], dtype=float32), 'zero_points': array([], dtype=int32), 'quantized_dimension': 0}, 'sparsity_parameters': {}}]
+8256
+7014
+dinner
+/home/nag/Nagaraj/Master/Flickr8k_Dataset/1579287915_4257c54451.jpg
+1000
+2022-05-08 04:49:13.550840: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 8454144 exceeds 10% of free system memory.
+2022-05-08 04:49:13.668569: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 8454144 exceeds 10% of free system memory.
+2022-05-08 04:49:13.706744: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 8454144 exceeds 10% of free system memory.
+2022-05-08 04:49:21.070265: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 8454144 exceeds 10% of free system memory.
+2022-05-08 04:49:21.101450: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 8454144 exceeds 10% of free system memory.
+
+ ******NO Model Quantization: 
+
+****** Time taken:  0.25814505815505984
+ACTUAL- TEXT:
+['A woman in a blue shirt guides her dog over an obstacle .', 'a woman is running beside a dog that is jumping over a red and white obedience training fence .', 'A woman next to a dog which is running an obstacle course .', 'A woman walking with a Sheltie through a competition obstacle course .', 'The dog is jumping over the hurdles beside a woman .']
+PREDICTED- TEXT:
+A dog jumps over a hurdle .
+/home/nag/Nagaraj/Master/venv/lib/python3.9/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 3-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/home/nag/Nagaraj/Master/venv/lib/python3.9/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+BLEU-1: 0.403370
+BLEU-2: 0.194846
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+
+ ****** Encoder Only Quantization: 
+
+****** Time taken:  0.3747295498847961
+ACTUAL- TEXT:
+['A woman in a blue shirt guides her dog over an obstacle .', 'a woman is running beside a dog that is jumping over a red and white obedience training fence .', 'A woman next to a dog which is running an obstacle course .', 'A woman walking with a Sheltie through a competition obstacle course .', 'The dog is jumping over the hurdles beside a woman .']
+PREDICTED- TEXT:
+A dog jumps over a hurdle .
+BLEU-1: 0.403370
+BLEU-2: 0.194846
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+
+ ****** No Encoder Quantization and Final Model Quantization: 
+
+****** Time taken:  0.020506898562113445
+ACTUAL- TEXT:
+['A woman in a blue shirt guides her dog over an obstacle .', 'a woman is running beside a dog that is jumping over a red and white obedience training fence .', 'A woman next to a dog which is running an obstacle course .', 'A woman walking with a Sheltie through a competition obstacle course .', 'The dog is jumping over the hurdles beside a woman .']
+PREDICTED- TEXT:
+A dog is running through the grass .
+BLEU-1: 0.601378
+BLEU-2: 0.343645
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+
+ ****** Both Encoder and Final Model Quantization: 
+
+****** Time taken:  0.33197074731191
+ACTUAL- TEXT:
+['A woman in a blue shirt guides her dog over an obstacle .', 'a woman is running beside a dog that is jumping over a red and white obedience training fence .', 'A woman next to a dog which is running an obstacle course .', 'A woman walking with a Sheltie through a competition obstacle course .', 'The dog is jumping over the hurdles beside a woman .']
+PREDICTED- TEXT:
+A dog is running through the grass .
+BLEU-1: 0.601378
+BLEU-2: 0.343645
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+
+ ****** Encoder Only Quantization: 
+
+****** Time taken:  0.6716651995976766
+PREDICTED- TEXT:
+A girl in a pink dress is playing with a stretchy charm bracelet .
+
+ ****** Both Encoder and Final Model Quantization: 
+
+****** Time taken:  0.6635554671287537
+PREDICTED- TEXT:
+A man in a black shirt is sitting on a bench in front of a building .
+
+ ****** Encoder Only Quantization: 
+
+****** Time taken:  0.6105300307273864
+PREDICTED- TEXT:
+A man in a black shirt and sunglasses talks on a cellphone .
+
+ ****** Both Encoder and Final Model Quantization: 
+
+****** Time taken:  0.48261051177978515
+PREDICTED- TEXT:
+A man in a black shirt is sitting on a bench .
+
+ ****** Encoder Only Quantization: 
+
+****** Time taken:  0.883933937549591
+PREDICTED- TEXT:
+A young girl in a pink jacket is eating a cookie with a skull and crossbones on it .
+
+ ****** Both Encoder and Final Model Quantization: 
+
+****** Time taken:  0.559264357884725
+PREDICTED- TEXT:
+A man in a black shirt is standing in front of a building .
+>>> 
+
+
+
+Testing of plain Test Images on Raspberry Pi BLEU scores
+
+evaluate_model_basic_test_images - Option Zero Select
+1000
+
+ ****** Model Quantization:  - Option 0
+***** Model Quantization: 
+
+****** Time taken:  115.54862581094106
+BLEU-1: 0.553067
+BLEU-2: 0.338269
+BLEU-3: 0.246575
+BLEU-4: 0.133379
+
+
+
+
+30
+
+ ****** Model Quantization: - Option 0
+
+ ****** Time taken:  3.6862574259440106
+BLEU-1: 0.551122
+BLEU-2: 0.327042
+BLEU-3: 0.215061
+BLEU-4: 0.093568
+
+
+
+30
+
+ ****** Encoder Only Quantization:  -  Option 1
+
+ ****** Time taken:  19.106087231636046
+BLEU-1: 0.557740
+BLEU-2: 0.326371
+BLEU-3: 0.223283
+BLEU-4: 0.101591
+
+
+
+30
+
+ ****** NO Encoder Quantization and Final Model Quantization:  Option 2
+
+ ****** Time taken:  0.5343379656473796
+BLEU-1: 0.569149
+BLEU-2: 0.329494
+BLEU-3: 0.201670
+BLEU-4: 0.090564
+
+
+30
+
+ ****** Encoder and Final Model Quantization: 
+
+ ****** Time taken:  14.981569564342498
+BLEU-1: 0.561497
+BLEU-2: 0.325725
+BLEU-3: 0.200664
+BLEU-4: 0.090346
+
+
+
+Beam Search Single Sample for multiple Options
+Normal Max search: A dog jumps over a hurdle .
+
+****** Time taken:  5.023088387648264
+Beam Search, k=3: A black and white dog jumps over a hurdle .
+
+****** Time taken:  8.343770150343577
+Beam Search, k=5: A black and white dog jumps over a hurdle .
+
+****** Time taken:  11.745165646076202
+Beam Search, k=7: A black and white dog jumps over a hurdle .
+>>> 
+
+
+Single Image Beach Search Report with Encoder Optimzation
+/home/nag/Nagaraj/Master/Flickr8k_Dataset/1579287915_4257c54451.jpg
+1000
+ACTUAL- TEXT:
+[[['A', 'woman', 'in', 'a', 'blue', 'shirt', 'guides', 'her', 'dog', 'over', 'an', 'obstacle', '.'], ['a', 'woman', 'is', 'running', 'beside', 'a', 'dog', 'that', 'is', 'jumping', 'over', 'a', 'red', 'and', 'white', 'obedience', 'training', 'fence', '.'], ['A', 'woman', 'next', 'to', 'a', 'dog', 'which', 'is', 'running', 'an', 'obstacle', 'course', '.'], ['A', 'woman', 'walking', 'with', 'a', 'Sheltie', 'through', 'a', 'competition', 'obstacle', 'course', '.'], ['The', 'dog', 'is', 'jumping', 'over', 'the', 'hurdles', 'beside', 'a', 'woman', '.']]]
+1
+1
+PREDICTED- TEXT:
+[['A', 'black', 'and', 'white', 'dog', 'jumps', 'over', 'a', 'hurdle', '.']]
+FINAL- CAPTION:
+A black and white dog jumps over a hurdle .
+
+****** Time taken:  5.102087477842967
+/home/nag/Nagaraj/Master/venv/lib/python3.9/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 3-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/home/nag/Nagaraj/Master/venv/lib/python3.9/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+BLEU-1: 0.633386
+BLEU-2: 0.356873
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+Beam Search, k=3: A black and white dog jumps over a hurdle .

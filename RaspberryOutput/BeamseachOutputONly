@@ -1,0 +1,246 @@
+Beam Search Output Only for 5 samples
+Beam Encoder Only Quantization: (Option 1)
+
+ ****** Time taken:  24.680555335680644
+BLEU-1: 0.571046
+BLEU-2: 0.299737
+BLEU-3: 0.153665
+BLEU-4: 0.000000
+
+
+
+
+Beam NO Encoder Quantization and Final Model Quantization:
+
+ ****** Time taken:  0.6711714665095011 (Option 2)
+BLEU-1: 0.590909
+BLEU-2: 0.326431
+BLEU-3: 0.231439
+BLEU-4: 0.110528
+
+
+
+ ****** Beam Model Quantization: (Option 0)
+ 
+ ****** Time taken:  4.880943079789479
+ 
+BLEU-1: 0.517058
+BLEU-2: 0.266936
+BLEU-3: 0.143209
+BLEU-4: 0.000000
+
+
+ ****** Beam Encoder and Final Model Quantization: (Option 3)
+  ****** Beam Encoder and Final Model Quantization: 
+
+ ****** Time taken:  21.338645235697427
+BLEU-1: 0.530303
+BLEU-2: 0.279717
+BLEU-3: 0.210956
+BLEU-4: 0.102314
+
+
+
+
+
+
+
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Indivudual Beam Search Output and Time numbers
+beam_search_predictions
+1
+PREDICTED- TEXT:
+[['A', 'white', 'dog', 'is', 'jumping', 'over', 'a', 'fallen', 'tree', '.']]
+FINAL- CAPTION:
+A white dog is jumping over a fallen tree .
+
+****** Time taken:  1.1091993808746339
+2
+
+ ****** Beam Model Quantization: 
+beam_search_predictions
+1
+PREDICTED- TEXT:
+[['A', 'girl', 'in', 'a', 'bathing', 'suit', 'jumps', 'into', 'a', 'pool', '.']]
+FINAL- CAPTION:
+A girl in a bathing suit jumps into a pool .
+
+****** Time taken:  0.9386229713757833
+3
+
+ ****** Beam Model Quantization: 
+beam_search_predictions
+1
+PREDICTED- TEXT:
+[['A', 'man', 'in', 'a', 'red', 'shirt', 'climbs', 'a', 'rock', 'face', '.']]
+FINAL- CAPTION:
+A man in a red shirt climbs a rock face .
+
+****** Time taken:  0.9399931232134501
+4
+
+ ****** Beam Model Quantization: 
+beam_search_predictions
+1
+PREDICTED- TEXT:
+[['A', 'man', 'in', 'a', 'red', 'shirt', 'is', 'hooking', 'a', 'rope', '.']]
+FINAL- CAPTION:
+A man in a red shirt is hooking a rope .
+
+****** Time taken:  0.953960140546163
+5
+
+ ****** Beam Model Quantization: 
+beam_search_predictions
+1
+PREDICTED- TEXT:
+[['A', 'man', 'is', 'sitting', 'on', 'a', 'bench', 'shading', 'himself', '.']]
+FINAL- CAPTION:
+A man is sitting on a bench shading himself .
+
+****** Time taken:  0.938936714331309
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+
+
+
+
+***********************************************************************************************************************************
+
+['A child in a pink dress is climbing up a set of stairs in an entry way .', 'A girl going into a wooden building .', 'A little girl climbing into a wooden playhouse .', 'A little girl climbing the stairs to her playhouse .', 'A little girl in a pink dress going into a wooden cabin .']
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+*********************
+
+[{'name': 'StatefulPartitionedCall:0', 'index': 312, 'shape': array([   1, 2048], dtype=int32), 'shape_signature': array([  -1, 2048], dtype=int32), 'dtype': <class 'numpy.float32'>, 'quantization': (0.0, 0), 'quantization_parameters': {'scales': array([], dtype=float32), 'zero_points': array([], dtype=int32), 'quantized_dimension': 0}, 'sparsity_parameters': {}}]
+*********************
+
+2.8.0
+*********************
+
+[{'name': 'serving_default_input_3:0', 'index': 0, 'shape': array([  1, 299, 299,   3], dtype=int32), 'shape_signature': array([ -1, 299, 299,   3], dtype=int32), 'dtype': <class 'numpy.float32'>, 'quantization': (0.0, 0), 'quantization_parameters': {'scales': array([], dtype=float32), 'zero_points': array([], dtype=int32), 'quantized_dimension': 0}, 'sparsity_parameters': {}}]
+INFO: Created TensorFlow Lite delegate for select TF ops.
+INFO: TfLiteFlexDelegate delegate: 4 nodes delegated out of 38 nodes with 2 partitions.
+
+[{'name': 'StatefulPartitionedCall:0', 'index': 74, 'shape': array([   1, 8256], dtype=int32), 'shape_signature': array([  -1, 8256], dtype=int32), 'dtype': <class 'numpy.float32'>, 'quantization': (0.0, 0), 'quantization_parameters': {'scales': array([], dtype=float32), 'zero_points': array([], dtype=int32), 'quantized_dimension': 0}, 'sparsity_parameters': {}}]
+[{'name': 'serving_default_input_3:0', 'index': 0, 'shape': array([ 1, 40], dtype=int32), 'shape_signature': array([-1, 40], dtype=int32), 'dtype': <class 'numpy.float32'>, 'quantization': (0.0, 0), 'quantization_parameters': {'scales': array([], dtype=float32), 'zero_points': array([], dtype=int32), 'quantized_dimension': 0}, 'sparsity_parameters': {}}, {'name': 'serving_default_input_2:0', 'index': 1, 'shape': array([   1, 2048], dtype=int32), 'shape_signature': array([  -1, 2048], dtype=int32), 'dtype': <class 'numpy.float32'>, 'quantization': (0.0, 0), 'quantization_parameters': {'scales': array([], dtype=float32), 'zero_points': array([], dtype=int32), 'quantized_dimension': 0}, 'sparsity_parameters': {}}]
+8256
+7014
+dinner
+/home/nag/Nagaraj/Master/Flickr8k_Dataset/1579287915_4257c54451.jpg
+1000
+predict_captions
+Normal Max search: A dog jumps over a hurdle .
+beam_search_predictions
+ACTUAL- TEXT:
+[[['A', 'woman', 'in', 'a', 'blue', 'shirt', 'guides', 'her', 'dog', 'over', 'an', 'obstacle', '.'], ['a', 'woman', 'is', 'running', 'beside', 'a', 'dog', 'that', 'is', 'jumping', 'over', 'a', 'red', 'and', 'white', 'obedience', 'training', 'fence', '.'], ['A', 'woman', 'next', 'to', 'a', 'dog', 'which', 'is', 'running', 'an', 'obstacle', 'course', '.'], ['A', 'woman', 'walking', 'with', 'a', 'Sheltie', 'through', 'a', 'competition', 'obstacle', 'course', '.'], ['The', 'dog', 'is', 'jumping', 'over', 'the', 'hurdles', 'beside', 'a', 'woman', '.']]]
+1
+1
+PREDICTED- TEXT:
+[['A', 'black', 'and', 'white', 'dog', 'jumps', 'over', 'a', 'hurdle', '.']]
+FINAL- CAPTION:
+A black and white dog jumps over a hurdle .
+
+****** Time taken:  0.8521705826123556
+/home/nag/Nagaraj/Master/venv/lib/python3.9/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 3-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/home/nag/Nagaraj/Master/venv/lib/python3.9/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+BLEU-1: 0.633386
+BLEU-2: 0.356873
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+Without Optimzation Beam Search, k=3: A black and white dog jumps over a hurdle .
+beam_search_predictions
+ACTUAL- TEXT:
+[[['A', 'woman', 'in', 'a', 'blue', 'shirt', 'guides', 'her', 'dog', 'over', 'an', 'obstacle', '.'], ['a', 'woman', 'is', 'running', 'beside', 'a', 'dog', 'that', 'is', 'jumping', 'over', 'a', 'red', 'and', 'white', 'obedience', 'training', 'fence', '.'], ['A', 'woman', 'next', 'to', 'a', 'dog', 'which', 'is', 'running', 'an', 'obstacle', 'course', '.'], ['A', 'woman', 'walking', 'with', 'a', 'Sheltie', 'through', 'a', 'competition', 'obstacle', 'course', '.'], ['The', 'dog', 'is', 'jumping', 'over', 'the', 'hurdles', 'beside', 'a', 'woman', '.']]]
+1
+1
+PREDICTED- TEXT:
+[['A', 'black', 'and', 'white', 'dog', 'jumps', 'over', 'a', 'hurdle', '.']]
+FINAL- CAPTION:
+A black and white dog jumps over a hurdle .
+
+****** Time taken:  1.4406000653902689
+BLEU-1: 0.633386
+BLEU-2: 0.356873
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+Without Optimzation Beam Search, k=5: A black and white dog jumps over a hurdle .
+beam_search_predictions
+ACTUAL- TEXT:
+[[['A', 'woman', 'in', 'a', 'blue', 'shirt', 'guides', 'her', 'dog', 'over', 'an', 'obstacle', '.'], ['a', 'woman', 'is', 'running', 'beside', 'a', 'dog', 'that', 'is', 'jumping', 'over', 'a', 'red', 'and', 'white', 'obedience', 'training', 'fence', '.'], ['A', 'woman', 'next', 'to', 'a', 'dog', 'which', 'is', 'running', 'an', 'obstacle', 'course', '.'], ['A', 'woman', 'walking', 'with', 'a', 'Sheltie', 'through', 'a', 'competition', 'obstacle', 'course', '.'], ['The', 'dog', 'is', 'jumping', 'over', 'the', 'hurdles', 'beside', 'a', 'woman', '.']]]
+1
+1
+PREDICTED- TEXT:
+[['A', 'black', 'and', 'white', 'dog', 'jumps', 'over', 'a', 'hurdle', '.']]
+FINAL- CAPTION:
+A black and white dog jumps over a hurdle .
+
+****** Time taken:  2.030260769526164
+BLEU-1: 0.633386
+BLEU-2: 0.356873
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+Without Optimzation Beam Search, k=7: A black and white dog jumps over a hurdle .
+beam_search_predictions_encoder_interpreter
+ACTUAL- TEXT:
+[[['A', 'woman', 'in', 'a', 'blue', 'shirt', 'guides', 'her', 'dog', 'over', 'an', 'obstacle', '.'], ['a', 'woman', 'is', 'running', 'beside', 'a', 'dog', 'that', 'is', 'jumping', 'over', 'a', 'red', 'and', 'white', 'obedience', 'training', 'fence', '.'], ['A', 'woman', 'next', 'to', 'a', 'dog', 'which', 'is', 'running', 'an', 'obstacle', 'course', '.'], ['A', 'woman', 'walking', 'with', 'a', 'Sheltie', 'through', 'a', 'competition', 'obstacle', 'course', '.'], ['The', 'dog', 'is', 'jumping', 'over', 'the', 'hurdles', 'beside', 'a', 'woman', '.']]]
+1
+1
+PREDICTED- TEXT:
+[['A', 'black', 'and', 'white', 'dog', 'jumps', 'over', 'a', 'hurdle', '.']]
+FINAL- CAPTION:
+A black and white dog jumps over a hurdle .
+
+****** Time taken:  4.833949760595957
+BLEU-1: 0.633386
+BLEU-2: 0.356873
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+Beam Search, k=3: A black and white dog jumps over a hurdle .
+beam_search_predictions_encoder_interpreter
+ACTUAL- TEXT:
+[[['A', 'woman', 'in', 'a', 'blue', 'shirt', 'guides', 'her', 'dog', 'over', 'an', 'obstacle', '.'], ['a', 'woman', 'is', 'running', 'beside', 'a', 'dog', 'that', 'is', 'jumping', 'over', 'a', 'red', 'and', 'white', 'obedience', 'training', 'fence', '.'], ['A', 'woman', 'next', 'to', 'a', 'dog', 'which', 'is', 'running', 'an', 'obstacle', 'course', '.'], ['A', 'woman', 'walking', 'with', 'a', 'Sheltie', 'through', 'a', 'competition', 'obstacle', 'course', '.'], ['The', 'dog', 'is', 'jumping', 'over', 'the', 'hurdles', 'beside', 'a', 'woman', '.']]]
+1
+1
+PREDICTED- TEXT:
+[['A', 'black', 'and', 'white', 'dog', 'jumps', 'over', 'a', 'hurdle', '.']]
+FINAL- CAPTION:
+A black and white dog jumps over a hurdle .
+
+****** Time taken:  7.953396499156952
+BLEU-1: 0.633386
+BLEU-2: 0.356873
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+Beam Search, k=5: A black and white dog jumps over a hurdle .
+beam_search_predictions_encoder_interpreter
+ACTUAL- TEXT:
+[[['A', 'woman', 'in', 'a', 'blue', 'shirt', 'guides', 'her', 'dog', 'over', 'an', 'obstacle', '.'], ['a', 'woman', 'is', 'running', 'beside', 'a', 'dog', 'that', 'is', 'jumping', 'over', 'a', 'red', 'and', 'white', 'obedience', 'training', 'fence', '.'], ['A', 'woman', 'next', 'to', 'a', 'dog', 'which', 'is', 'running', 'an', 'obstacle', 'course', '.'], ['A', 'woman', 'walking', 'with', 'a', 'Sheltie', 'through', 'a', 'competition', 'obstacle', 'course', '.'], ['The', 'dog', 'is', 'jumping', 'over', 'the', 'hurdles', 'beside', 'a', 'woman', '.']]]
+1
+1
+PREDICTED- TEXT:
+[['A', 'black', 'and', 'white', 'dog', 'jumps', 'over', 'a', 'hurdle', '.']]
+FINAL- CAPTION:
+A black and white dog jumps over a hurdle .
+
+****** Time taken:  11.11774754524231
+BLEU-1: 0.633386
+BLEU-2: 0.356873
+BLEU-3: 0.000000
+BLEU-4: 0.000000
+Beam Search, k=7: A black and white dog jumps over a hurdle .
+>>> 
